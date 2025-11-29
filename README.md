@@ -113,5 +113,3 @@ Edit `config.py` to add API keys (optional):
 ## License
 
 Free to use and modify!
-
-# webboost
