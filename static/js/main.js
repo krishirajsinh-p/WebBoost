@@ -17,14 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hide hint when form is submitted
         if (form) {
             form.addEventListener('submit', function(e) {
-                const url = urlInput.value.trim();
-                
-                if (!url) {
-                    e.preventDefault();
-                    showError('Please enter a website URL');
-                    return;
-                }
-
                 // Show loading state
                 enterHint.innerHTML = '<span class="loading-spinner">⏳</span> analyzing...';
                 if (errorMessage) errorMessage.style.display = 'none';
@@ -39,4 +31,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-

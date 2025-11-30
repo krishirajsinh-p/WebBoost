@@ -1,17 +1,6 @@
 # WebBoost Scoring Guide
 
-## Overview
-WebBoost analyzes blog posts and websites to provide actionable recommendations for content creators. This comprehensive guide explains how the scoring system works, what each metric measures, and how to interpret and improve your results.
-
----
-
-## 🎯 Project Purpose
-
-**WebBoost** is designed for **bloggers** who want to:
-- Analyze their blog posts for quality and reach potential
-- Get specific recommendations on what to improve
-- Understand how their content performs across multiple dimensions
-- Optimize their content for better engagement and discoverability
+This comprehensive guide explains how the scoring system works, what each metric measures, and how to interpret and improve your results.
 
 ---
 
@@ -809,36 +798,6 @@ results = {
     ]
 }
 ```
-
----
-
-## ✅ Recent Improvements
-
-### Problems Solved
-
-1. ✅ **Removed redundant score assignments**
-   - Before: Scores duplicated in `free_data_sources` nested dicts
-   - After: Single source of truth in `results['scores']`
-
-2. ✅ **Added score validation**
-   - All scores validated to be in [0, 100] range
-   - Type checking for numeric values
-   - Warning messages for out-of-range scores
-
-3. ✅ **Added sub-criteria transparency**
-   - Every score broken down into components
-   - Shows exact formulas and calculations
-   - Ideal values provided for each metric
-
-4. ✅ **Enhanced recommendations**
-   - 5 priority levels (Critical/High/Medium/Low/Excellent)
-   - Context-aware suggestions
-   - Data-driven recommendations
-
-5. ✅ **Improved web UI**
-   - Hover overlays show sub-criteria breakdowns
-   - All recommendations displayed (not just first 10)
-   - Visual indicators for all priority levels
 
 ---
 

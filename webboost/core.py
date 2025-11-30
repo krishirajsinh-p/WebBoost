@@ -8,18 +8,12 @@ The class orchestrates data collection, scoring, and recommendation generation.
 import asyncio
 import time
 import os
+import re
+import aiohttp
 from typing import Dict, Any, Optional
 from datetime import datetime
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
-try:
-    from playwright.async_api import async_playwright  
-    _PLAYWRIGHT_AVAILABLE = True
-except Exception:
-    _PLAYWRIGHT_AVAILABLE = False
-import aiohttp
-
-import re
 from textstat import textstat
 from webboost.constants import SCORING_WEIGHTS
 from webboost.data_collection import (
@@ -49,13 +43,17 @@ from webboost.scoring import (
     score_seo_keywords
 )
 from webboost.recommendations import generate_recommendations
-
+try:
+    from playwright.async_api import async_playwright  
+    _PLAYWRIGHT_AVAILABLE = True
+except Exception:
+    _PLAYWRIGHT_AVAILABLE = False
 
 class WebBoostAnalyzer:
     """
-    Main analyzer class for evaluating websites.
+    Main analyzer class for evaluating blogs.
     
-    This class provides a clean interface for analyzing websites across
+    This class provides a clean interface for blog page analysis across
     multiple criteria including readability, SEO, performance, and UX.
     
     Example:

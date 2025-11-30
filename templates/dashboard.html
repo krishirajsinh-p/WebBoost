@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results - WebBoost Analyzer</title>
+    <title>WebBoost - Analysis Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cursor Trail Container -->
+    <div id="cursorTrail"></div>
+
     <div class="landing-container">
         <nav class="navbar">
             <div class="logo">
@@ -18,7 +21,7 @@
         </nav>
 
         <div class="results-header">
-            <h1 class="results-title">Analysis Results</h1>
+            <h1 class="results-title">Analysis Dashboard</h1>
             <p class="results-url">{{ results.url }}</p>
         </div>
 
@@ -87,7 +90,7 @@
                     } %}
                     {% set display_names = {
                         'ad_experience': 'Ad Free Experience',
-                        'seo_keywords': 'SEO Optimization',
+                        'seo_keywords': 'SEO Score',
                         'social_integration': 'Social Media',
                         'layout_quality': 'Design & Layout'
                     } %}
@@ -597,5 +600,7 @@
          Instant Results • Actionable Insights
         </footer>
     </div>
+
+    <script src="{{ url_for('static', filename='js/cursorTrail.js') }}"></script>
 </body>
 </html>

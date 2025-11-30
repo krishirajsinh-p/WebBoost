@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebBoost Analyzer</title>
+    <title>WebBoost - Blog Analyzing tool</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Particle Background Canvas -->
-    <canvas id="particleCanvas"></canvas>
-    
     <!-- Cursor Trail Container -->
     <div id="cursorTrail"></div>
-    
-    <div class="landing-container landing-hero">
+
+    <div class="landing-container landing-hero" id="home">
         <nav class="navbar">
-            <!-- <div class="logo">
-                <span class="logo-icon">♦</span> WebBoost 
-            </div> -->
             <div class="nav-links">
-                <a href="/" class="nav-link active">HOME</a>
+                <a href="#home" class="nav-link active">HOME</a>
                 <!-- <a href="/analyzer" class="nav-link">DEMO</a> -->
-                <a href="#team" class="nav-link">About Team</a>
-                <a href="https://github.com" target="_blank" class="nav-link">GITHUB</a>
+                <a href="#features" class="nav-link">FEATURES</a>
+                <a href="#team" class="nav-link">TEAM</a>
+                <a href="https://github.com/ManjunathNaidugari/WebBoost" target="_blank" class="nav-link">GITHUB</a>
             </div>
         </nav>
 
+        <!-- Home Hero Section -->
         <div class="hero-center">
             <h1 class="hero-mega-title">
                 <span class="glitch-text">WebBoost</span>
             </h1>
-            
+
             <p class="hero-mega-subtitle">
-                Discover hidden insights within your blog posts like never before and get smarter blog checkups with Real fixes.
+                Discover hidden insights within your blog posts like never before and get smarter blog checkups with
+                Real fixes.
             </p>
 
             <p class="hero-support-text">
                 WebBoost scans your blog and scores your content, UX, and SEO in one place.
-                You get a clear report with quick wins and step-by-step fixes you can actually use.
+                You get a clear report with quick actionable insights and recommendations you can actually use.
             </p>
 
             <a href="/analyzer" class="cta-button-hero">
@@ -46,12 +45,52 @@
             </a>
         </div>
 
+        <!-- Features Section -->
+        <div class="features-section" id="features">
+            <h2 class="features-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Unified Scoring</h3>
+                    <p>Comprehensive analysis combining Content, UX, SEO, Social, and Ad Experience into a single weighted score.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Readability Multi-Index</h3>
+                    <p>Advanced text analysis using Flesch, Fog, SMOG, Coleman-Liau, and ARI indices to ensure your content is easy to read.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Engagement Heuristics</h3>
+                    <p>Analyzes questions, CTAs, and sentiment to maximize reader engagement and interaction.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Informativeness Depth</h3>
+                    <p>Evaluates content depth through word count, header structure, media usage, and citation patterns.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Layout Quality</h3>
+                    <p>Checks for mobile responsiveness, security, whitespace usage, typography, and contrast ratios.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>SEO Optimization</h3>
+                    <p>Deep dive into title/meta tags, indexing, schema markup, keyword density, and URL structure.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Ad Intrusiveness</h3>
+                    <p>Detects and scores ad density, placement, and autoplay behavior to ensure a good user experience.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Prioritized Recommendations</h3>
+                    <p>Actionable advice prioritized by impact: Critical, High, Medium, Low, and Excellent.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Team Section -->
         <div class="team-section" id="team">
             <h2 class="team-title">Meet Our Team - Hakuna Matata</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/soyeong-jeong-839567390/" target="_blank" class="team-member-link">
+                    <a href="https://www.linkedin.com/in/soyeong-jeong-839567390/" target="_blank"
+                        class="team-member-link">
                         <div class="team-member-avatar">SJ</div>
                         <div class="team-member-name">Soyeong Jeong</div>
                     </a>
@@ -63,35 +102,39 @@
                     </a>
                 </div>
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/enkela-tafa-71138a285/" target="_blank" class="team-member-link">
+                    <a href="https://www.linkedin.com/in/enkela-tafa-71138a285/" target="_blank"
+                        class="team-member-link">
                         <div class="team-member-avatar">ET</div>
                         <div class="team-member-name">Enkela Tafa</div>
                     </a>
                 </div>
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/manjunath-naidugari-287134204/" target="_blank" class="team-member-link">
+                    <a href="https://www.linkedin.com/in/manjunath-naidugari-287134204/" target="_blank"
+                        class="team-member-link">
                         <div class="team-member-avatar">MN</div>
                         <div class="team-member-name">Manjunath Naidugari</div>
                     </a>
                 </div>
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/vishnu-mehta-fib011235813/" target="_blank" class="team-member-link">
+                    <a href="https://www.linkedin.com/in/vishnu-mehta-fib011235813/" target="_blank"
+                        class="team-member-link">
                         <div class="team-member-avatar">VM</div>
                         <div class="team-member-name">Vishnu Mehta</div>
                     </a>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-avatar">AG</div>
-                    <div class="team-member-name">Angel</div>
+                    <div class="team-member-avatar">AC</div>
+                    <div class="team-member-name">Angel Choi</div>
                 </div>
             </div>
         </div>
 
         <footer class="landing-footer">
-             Instant Results • Actionable Insights
+            Instant Results • Actionable Insights
         </footer>
     </div>
-    
-    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/cursorTrail.js') }}"></script>
 </body>
+
 </html>

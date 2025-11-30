@@ -1,28 +1,13 @@
 #!/usr/bin/env python3
 """
 Simple test script to run the WebBoost Analyzer
+Works without any API keys!
 """
 
 import asyncio
 import sys
-import importlib.util
 from typing import Optional
-
-# Load the analyzer from the new package structure
-try:
-    from webboost import WebBoostAnalyzer
-except ImportError:
-    # Fallback to old structure if new package not available
-    spec = importlib.util.spec_from_file_location(
-        "analyzer", 
-        "analyzer need to resolve_issues.py"
-    )
-    if spec and spec.loader:
-        analyzer_module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(analyzer_module)
-        WebBoostAnalyzer = analyzer_module.WebBoostAnalyzer
-    else:
-        raise ImportError("Could not create module spec")
+from webboost import WebBoostAnalyzer
 
 async def test_analyzer(url: Optional[str] = None):
     """Test the analyzer with a URL"""

@@ -1,4 +1,12 @@
-# Visual Guide: Metric Overlay Feature
+# Visual Guide
+
+## Recommendations System
+Each recommendation color-coded by scores:
+- 🔴 Critical – immediate impact
+- 🟠 High – strong improvement potential
+- 🟡 Medium – moderate benefit
+- 🟢 Low – minor enhancement
+- ✅ Excellent – already optimal
 
 ## 📸 What You'll See
 
@@ -150,17 +158,7 @@ User sees 9 metric scores in circular progress rings:
 Readability Informativeness Engagement
 ```
 
-### Step 2: User Hovers Over "Readability"
-```
-Overlay smoothly fades in (160ms animation):
-
-From: opacity: 0, translateY(6px)
-To:   opacity: 1, translateY(0)
-
-Result: Detailed breakdown visible
-```
-
-### Step 3: User Reviews Metrics
+### Step 2: User Reviews Metrics
 ```
 ✓ Flesch Reading Ease: 67.3 (Ideal: 60-70) ← Good!
 ✓ Flesch-Kincaid: 7.2 (Ideal: 6-8)        ← Good!
@@ -169,7 +167,7 @@ Result: Detailed breakdown visible
 ... etc
 ```
 
-### Step 4: User Scrolls If Needed
+### Step 3: User Scrolls If Needed
 ```
 For criteria with many metrics (like SEO with 11):
 ┌─────────────────────┐
@@ -180,127 +178,3 @@ For criteria with many metrics (like SEO with 11):
 │ ... (scroll down)   │
 └─────────────────────┘
 ```
-
-### Step 5: User Moves to Next Metric
-```
-Overlay fades out after 160ms delay:
-- Prevents flickering during mouse movement
-- Smooth transition to next metric
-```
-
-## 🎨 Color Coding
-
-### Headers
-```
-Green (#10b981) - Criterion name
-"READABILITY BREAKDOWN"
-```
-
-### Scores
-```
-White (#e2e8f0) - Actual values
-67.3, 7.2, etc.
-```
-
-### Labels
-```
-Gray (#94a3b8) - Metric names
-"Flesch Reading Ease"
-```
-
-### Ideal Values
-```
-Muted Gray (#64748b) - Ideal hints
-"Ideal: 60-70"
-```
-
-### Final Score
-```
-Green Background - Highlighted
-★ FINAL SCORE: 78/100 ★
-```
-
-## 🖱️ User Actions
-
-### Hover (Mouse)
-```
-1. Move cursor over any metric score
-2. Overlay appears after brief moment
-3. Keep hovering to read details
-4. Move away to hide
-```
-
-### Keyboard (Accessibility)
-```
-1. Press Tab to focus on metric
-2. Overlay appears automatically
-3. Tab through page to see different metrics
-4. Focus outline shows which is active
-```
-
-### Touch (Mobile - Future)
-```
-Currently hover-based
-Future: Tap to toggle overlay
-```
-
-## 📊 Data Accuracy
-
-All values shown are:
-- ✅ **Real** - Calculated during analysis
-- ✅ **Accurate** - Direct from backend breakdowns
-- ✅ **Up-to-date** - Matches current analysis
-- ✅ **Consistent** - Same algorithm as scoring
-
-## 🎓 Educational Value
-
-Each metric shows:
-1. **What** - Metric name
-2. **Value** - Actual measurement
-3. **Ideal** - Target range/value
-4. **Context** - How it fits in overall score
-
-Example Learning:
-```
-User sees:
-  Flesch-Kincaid Grade: 11.2
-  Ideal: 6-8
-
-User learns:
-  "My content is at 11th grade level,
-   but 6th-8th grade is better for
-   wider audience reach. I should
-   simplify my sentences."
-```
-
-## 🔄 Responsive Design
-
-### Desktop (1200px+)
-```
-Grid: 3-4 columns
-All metrics visible at once
-```
-
-### Tablet (768px-1199px)
-```
-Grid: 2-3 columns
-Some scrolling needed
-```
-
-### Mobile (< 768px)
-```
-Grid: 1-2 columns
-More scrolling
-Smaller overlay height
-```
-
-## ✨ Final Result
-
-**Before:** Simple score number (78)
-**After:** Complete understanding of:
-- 6 readability formulas
-- Actual vs ideal values
-- What to improve
-- How it's calculated
-
-**Impact:** Users go from confused to confident about improving their content!
