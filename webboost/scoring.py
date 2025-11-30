@@ -9,7 +9,7 @@ breakdown is a dictionary showing how the score was calculated.
 """
 
 import re
-import warnings
+import os
 from textstat import textstat
 import nltk
 from typing import Dict, Optional, Tuple
@@ -23,7 +23,9 @@ from webboost.analysis import (
     analyze_url_structure
 )
 
-nltk.data.path.append('../nltk_data')
+NLTK_DATA_PATH = os.path.join(os.getcwd(), 'nltk_data')
+print(f"Setting NLTK data path to: {NLTK_DATA_PATH}")
+nltk.data.path = [NLTK_DATA_PATH]
 
 def normalize_grade(value, ideal_low, ideal_high, max_hard=20):
     if value <= ideal_low:
@@ -104,16 +106,6 @@ def score_readability(text: str) -> Tuple[float, Dict]:
         return 50.0, breakdown
         
     try:
-        warnings.filterwarnings('ignore')
-        
-        try:
-            nltk.data.find('corpora/cmudict')
-        except LookupError:
-            try:
-                nltk.download('cmudict', quiet=True)
-            except:
-                pass
-        
         scores = {}
         # Add individual error handling for each readability metric
         try:
